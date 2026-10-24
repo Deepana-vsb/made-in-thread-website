@@ -21,6 +21,8 @@ import {
 import { products, categories, Category, Product } from "./data/products";
 import { siteConfig } from "./data/siteConfig";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 function money(amount: number) {
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -258,7 +260,7 @@ export default function Home() {
         <div className="hero-image-wrap">
           <img
             className="hero-image"
-            src="/products/chettinadsaree.jpeg"
+            src={`${basePath}/products/chettinadsaree.jpeg`}
             alt="Teal Chettinad Cotton Saree - Handcrafted collection"
             onError={(e) => {
               e.currentTarget.src =
@@ -450,7 +452,7 @@ export default function Home() {
                     </div>
                   ) : (
                     <img
-                      src={product.image}
+                      src={product.image.startsWith("http") ? product.image : `${basePath}${product.image}`}
                       alt={product.name}
                       loading={index < 4 ? "eager" : "lazy"}
                       onError={() => handleImageError(product.id)}
@@ -553,7 +555,7 @@ export default function Home() {
       <section className="story-section" id="story">
         <div className="story-image">
           <img
-            src="/products/pink-saree.jpeg"
+            src={`${basePath}/products/pink-saree.jpeg`}
             alt="Handcrafted Chettinad Sarees by Made in Thread"
             loading="lazy"
             onError={(e) => {
@@ -822,7 +824,7 @@ export default function Home() {
 
         <div className="contact-art">
           <img
-            src="/products/brown-saree.jpeg"
+            src={`${basePath}/products/brown-saree.jpeg`}
             alt="Chettinad Saree craft detail"
             loading="lazy"
             onError={(e) => {

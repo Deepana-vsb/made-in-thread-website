@@ -18,7 +18,8 @@ export const siteConfig = {
   // WhatsApp Group Chat Link for community & updates
   whatsappGroupLink: "https://chat.whatsapp.com/G7q1k6iE241GPkcnTdOPEW",
 
-  // Instagram Profile Link
+  // Instagram Profile Link & Account Name
+  instagramHandle: "@made_inthread",
   instagramUrl: "https://www.instagram.com/made_inthread?utm_source=ig_web_button_share_sheet&psln=ZDNlZDc0MzIxNw==",
 
   // Google Pay / UPI Payment Configuration
